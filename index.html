@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization-Button</title>
+    <!-- Google Fonts (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط العرض العادي -->
+    <div class="container">
+        
+        <!-- لوحة التحكم بالتخصيص (Customization Box) -->
+        <div class="customizer-card">
+            <h2><i class="fa-solid fa-wand-magic-sparkles"></i> تخصيص المظهر</h2>
+            <p>اختر الوضع واللون المريح لعينك:</p>
+
+            <!-- 1. زرار التبديل بين النهار والليل -->
+            <div class="option-group">
+                <label>الوضع (Theme):</label>
+                <button id="theme-toggle-btn" class="theme-btn">
+                    <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    <span id="theme-text">وضع النهار</span>
+                </button>
+            </div>
+
+            <hr class="divider">
+
+            <!-- 2. لوحة الألوان الهادئة -->
+            <div class="option-group">
+                <label>اللون الرئيسي (Muted Palette):</label>
+                <div class="color-options">
+                    <!-- ألوان هادئة ومريحة -->
+                    <button class="color-dot active" data-color="lavender" style="background-color: #8b5cf6;" title="لافندر هادئ"></button>
+                    <button class="color-dot" data-color="sage" style="background-color: #10b981;" title="أخضر مهدئ"></button>
+                    <button class="color-dot" data-color="ocean" style="background-color: #0284c7;" title="أزرق هادئ"></button>
+                    <button class="color-dot" data-color="rose" style="background-color: #f43f5e;" title="وردي ناعم"></button>
+                    <button class="color-dot" data-color="amber" style="background-color: #d97706;" title="دافئ مريح"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- محتوى اختباري لتجربة الألوان عليه -->
+        <div class="demo-card">
+            <span class="badge">معاينة التغيير</span>
+            <h3>مرحباً بك في لوحة التجربة!</h3>
+            <p>جرب التبديل بين وضع النهار والليل واختيار الألوان من الأعلى لترى كيف يتغير مظهر البطاقات والأزرار بسلاسة وبشكل مريح للعين.</p>
+            <button class="primary-btn">زر تفاعلي أولي</button>
+            <button class="outline-btn">زر ثانوي</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

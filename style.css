@@ -1,0 +1,211 @@
+/* ==========================================
+   1. تعريف المتغيرات والألوان الأساسية
+========================================== */
+
+/* الوضع النهاري الافتراضي (Light Mode) */
+[data-theme="light"] {
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* الوضع الليلي (Dark Mode) */
+[data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   2. درجات الألوان الهادئة المتاحة (Color Palette)
+========================================== */
+
+/* اللون المفضل الأول: Lavender (Default) */
+:root {
+    --primary: #8b5cf6;
+    --primary-light: rgba(139, 92, 246, 0.12);
+}
+
+/* باقي الألوان عند اختيارها */
+[data-color-theme="sage"] {
+    --primary: #10b981;
+    --primary-light: rgba(16, 185, 129, 0.12);
+}
+
+[data-color-theme="ocean"] {
+    --primary: #0284c7;
+    --primary-light: rgba(2, 132, 199, 0.12);
+}
+
+[data-color-theme="rose"] {
+    --primary: #f43f5e;
+    --primary-light: rgba(244, 63, 94, 0.12);
+}
+
+[data-color-theme="amber"] {
+    --primary: #d97706;
+    --primary-light: rgba(217, 119, 6, 0.12);
+}
+
+/* ==========================================
+   3. تنسيق عناصر الصفحة
+========================================== */
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* بطاقة التحكم والتخصيص */
+.customizer-card, .demo-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.customizer-card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customizer-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.option-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* زرار تغيير الوضع (Day / Night) */
+.theme-btn {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* دوائر اختيار الألوان */
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+
+.color-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.15);
+}
+
+.color-dot.active {
+    border-color: var(--text-primary);
+}
+
+/* بطاقة المعاينة والبطاقات التفاعلية */
+.badge {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.demo-card h3 {
+    margin: 15px 0 10px 0;
+}
+
+.demo-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.primary-btn {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.outline-btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
